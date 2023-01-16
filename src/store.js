@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { greetingApi } from "./services/greeting";
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     [greetingApi.reducerPath]: greetingApi.reducer,
   },
@@ -10,3 +10,5 @@ export const store = configureStore({
 });
 
 setupListeners(store.dispatch);
+
+export default store;
